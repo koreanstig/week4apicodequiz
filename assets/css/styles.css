@@ -1,0 +1,21 @@
+/* added css to align what i wanted, where i wanted it  */
+
+h1 {
+    text-align: center;
+}
+
+.startbtn {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.time {
+    text-align: right;
+}
+
+.highscoresLink {
+    text-align: left;
+}
