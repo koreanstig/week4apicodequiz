@@ -1,11 +1,17 @@
-for (var i = 0; i<document.querySelectorAll("li").length; i++) {
-    document.querySelectorAll("li")[i].classList.add("highscorebtn", "btn-primary", "btn-sm", "btn");
+for (var i = 0; i<document.querySelectorAll("#li").length; i++) {
+    document.querySelectorAll("#li")[i].classList.add("highscorebtn", "btn-primary", "btn-sm", "btn");
 }
 
-for (var i = 0; i<document.querySelectorAll("ol").length; i++) {
-    document.querySelectorAll("ol")[i].classList.add("col-4");
+for (var i = 0; i<document.querySelectorAll("ol.answers").length; i++) {
+    document.querySelectorAll("ol.answers")[i].classList.add("col-4");
 }
 
+
+function start() {
+    var startQuiz = document.querySelector(".startQuiz").addEventListener("click", function(){
+
+    });
+}
 
 
 // var timerElement = document.querySelector(".timer-count");
