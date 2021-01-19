@@ -29,7 +29,6 @@ var lianswer4 = document.querySelectorAll("li.answer4")
 var lianswer5 = document.querySelectorAll("li.answer5")
 // this function is what allows the first question to appear and timer to start clocking down
 function start() {
-    q1.style.display = "block";
     timerCount = 75;
     timeStart();
     answer1();
@@ -102,6 +101,7 @@ function answer1(){
     for (var i = 0; i < lianswer1.length; i++) {
             if ((lianswer1[2].addEventListener("click", function(){
                 q1displayoff();
+                addPoints();
                 nextQuestion1();
             }))) {
         }   else if ((lianswer1[0].addEventListener("click", function(){
@@ -134,6 +134,7 @@ function answer2(){
             if ((lianswer2[2].addEventListener("click", function(){
                 nextQuestion2();
                 q2displayoff();
+                addPoints();
             }))) {
         }   else if ((lianswer2[0].addEventListener("click", function(){
                 wrongNextQuestion2();
@@ -165,6 +166,7 @@ function answer3(){
             if ((lianswer3[3].addEventListener("click", function(){
                 nextQuestion3();
                 q3displayoff();
+                addPoints();
             }))) {
         }   else if ((lianswer3[0].addEventListener("click", function(){
                 wrongNextQuestion3();
@@ -196,6 +198,7 @@ function answer4(){
             if ((lianswer4[2].addEventListener("click", function(){
                 nextQuestion4();
                 q4displayoff();
+                addPoints();
             }))) {
         }   else if ((lianswer4[0].addEventListener("click", function(){
                 wrongNextQuestion4();
@@ -227,6 +230,7 @@ function answer5(){
             if ((lianswer2[3].addEventListener("click", function(){
                 nextQuestion5();
                 q5displayoff();
+                addPoints();
             }))) {
         }   else if ((lianswer5[0].addEventListener("click", function(){
                 wrongNextQuestion5();
@@ -243,15 +247,20 @@ function answer5(){
         }
     };
 };
-function addPoints(){
-    highScore ++;
-    points.textContent = highScore;
+function nextQuestion5(){
+    correctOn();
+};
+function wrongNextQuestion5(){
+    wrongOn();
+};
+function addPoints(highScore){
+    highScore =+ 10;
+    points.innerHTML = highScore;
 };
 function minusPoints(){
-    highScore --;
-    points.textContent = highScore;
-}
+    highScore--;
+    points.innerHTML = highScore;
+};
 console.log(highScore);
 // this function starts the quiz
 start();
-
