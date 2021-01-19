@@ -114,7 +114,6 @@ function q6displayon(){
     setInterval(function(){
         user.classList.add("surprise");
     }, 1000);
-    
 };
 function answer1(){
     for (var i = 0; i < lianswer1.length; i++) {
