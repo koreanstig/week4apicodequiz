@@ -21,6 +21,8 @@ var q2 = document.getElementById("q2");
 var q3 = document.querySelector("#q3");
 var q4 = document.querySelector("#q4");
 var q5 = document.querySelector("#q5");
+var q6 = document.querySelector("#q6");
+var user = document.querySelector(".userEntry");
 // variables for answers
 var lianswer1 = document.querySelectorAll("li.answer1")
 var lianswer2 = document.querySelectorAll("li.answer2")
@@ -105,11 +107,19 @@ function q5displayoff(){
         q5.classList.add("byebye");
     }, 1000);
 };
+function q6displayon(){
+    setInterval(function(){
+        q6.classList.add("surprise");
+    }, 1000);
+    setInterval(function(){
+        user.classList.add("surprise");
+    }, 1000);
+    
+};
 function answer1(){
     for (var i = 0; i < lianswer1.length; i++) {
             if ((lianswer1[2].addEventListener("click", function(){
                 q1displayoff();
-                addPoints();
                 nextQuestion1();
             }))) {
         }   else if ((lianswer1[0].addEventListener("click", function(){
@@ -142,7 +152,6 @@ function answer2(){
             if ((lianswer2[2].addEventListener("click", function(){
                 nextQuestion2();
                 q2displayoff();
-                addPoints();
             }))) {
         }   else if ((lianswer2[0].addEventListener("click", function(){
                 wrongNextQuestion2();
@@ -174,7 +183,6 @@ function answer3(){
             if ((lianswer3[3].addEventListener("click", function(){
                 nextQuestion3();
                 q3displayoff();
-                addPoints();
             }))) {
         }   else if ((lianswer3[0].addEventListener("click", function(){
                 wrongNextQuestion3();
@@ -206,7 +214,6 @@ function answer4(){
             if ((lianswer4[2].addEventListener("click", function(){
                 nextQuestion4();
                 q4displayoff();
-                addPoints();
             }))) {
         }   else if ((lianswer4[0].addEventListener("click", function(){
                 wrongNextQuestion4();
@@ -238,7 +245,6 @@ function answer5(){
             if ((lianswer2[3].addEventListener("click", function(){
                 nextQuestion5();
                 q5displayoff();
-                addPoints();
             }))) {
         }   else if ((lianswer5[0].addEventListener("click", function(){
                 wrongNextQuestion5();
@@ -257,9 +263,11 @@ function answer5(){
 };
 function nextQuestion5(){
     correctOn();
+    q6displayon();
 };
 function wrongNextQuestion5(){
     wrongOn();
+    q6displayon();
 };   
 // this function starts the quiz
 start();
