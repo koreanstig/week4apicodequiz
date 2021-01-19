@@ -8,8 +8,8 @@ h1 {
     text-align: center;
 }
 
-p {
-    text-align: center;
+#p {
+text-align: center;
 }
 
 .timer-count {
@@ -18,4 +18,13 @@ p {
 
 .highscoresLink {
     text-align: left;
+}
+
+.answers {
+    text-align: left;
+    padding-left: 0;
+}
+
+ol {
+    list-style: none;
 }
