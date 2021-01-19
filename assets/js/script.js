@@ -45,12 +45,20 @@ function correctOn(){
     setTimeout(function(){
         correct.classList.remove("surprise");
     }, 1000);  
+    highScore =+ 10;
+    points.innerHTML = highScore;
 };
 function wrongOn(){
     wrong.classList.add("surprise");  
     setTimeout(function(){
         wrong.classList.remove("surprise");
-    }, 1000);       
+    }, 1000);
+    timer = setInterval(function() {
+        newTimer = timerCount - 10;
+        timerElement.textContent = newTimer;
+    }, 0);
+    highScore =- 10;
+    points.innerHTML = highScore;       
 };
 function q1displayoff(){
     setInterval(function(){
@@ -252,15 +260,6 @@ function nextQuestion5(){
 };
 function wrongNextQuestion5(){
     wrongOn();
-};
-function addPoints(highScore){
-    highScore =+ 10;
-    points.innerHTML = highScore;
-};
-function minusPoints(){
-    highScore--;
-    points.innerHTML = highScore;
-};
-console.log(highScore);
+};   
 // this function starts the quiz
 start();
