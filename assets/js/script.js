@@ -18,8 +18,17 @@ var highScore = 0;
 var correct = document.querySelector('.correct');
 var wrong = document.querySelector('.wrong');
 // variables for questions
-var q1 = document.getElementById("q1");
+var q1 = document.querySelector("#q1");
 var q2 = document.getElementById("q2");
+var q3 = document.querySelector("#q3");
+var q4 = document.querySelector("#q4");
+var q5 = document.querySelector("#q5");
+
+var lianswer1 = document.querySelectorAll("li.answer1")
+var lianswer2 = document.querySelectorAll("li.answer2")
+var lianswer3 = document.querySelectorAll("li.answer3")
+var lianswer4 = document.querySelectorAll("li.answer4")
+var lianswer5 = document.querySelectorAll("li.answer5")
 
 // this function is what allows the first question to appear and timer to start clocking down
 function start() {
@@ -37,63 +46,218 @@ function timeStart (){
       }, 1000);
 };
 
-function nextQuestion(){
+function q1displayoff(){
     setInterval(function(){
-        correct.style.display = "block";
-    }, 0);
-    setInterval(function(){
-        q1.style.display = "none";
-    }, 1000);
-    setInterval(function(){
-        q2.style.display = "block";
-    }, 1000);
-    setInterval(function(){
-        correct.style.display = "none";
-    }, 1000);
+        q1.classList.add("byebye");
+    }, 1000);       
+};
 
+function q2displayon(){
+    setInterval(function(){
+        q2.classList.add("surprise");
+    }, 1000);
+};
+
+function q2displayoff(){
+    setInterval(function(){
+        q2.classList.add("byebye");
+    }, 1000);
+};
+
+function q3displayon(){
+    setInterval(function(){
+        q3.classList.add("surprise");
+    }, 1000);
+};
+
+function q3displayoff(){
+    setInterval(function(){
+        q3.classList.add("byebye");
+    }, 1000);
+};
+
+function q4displayon(){
+    setInterval(function(){
+        q4.classList.add("surprise");
+    }, 1000);
+};
+
+function q4displayoff(){
+    setInterval(function(){
+        q4.classList.add("byebye");
+    }, 1000);
+};
+
+function q5displayon(){
+    setInterval(function(){
+        q5.classList.add("surprise");
+    }, 1000);
+};
+
+function q5displayoff(){
+    setInterval(function(){
+        q5.classList.add("byebye");
+    }, 1000);
 };
 
 function answer1(){
-    for (var i = 0; i<document.querySelectorAll("li.answer1").length; i++) {
-            if ((document.querySelectorAll("li.answer1")[2].addEventListener("click", function(){
-                nextQuestion();
+    for (var i = 0; i < lianswer1.length; i++) {
+            if ((lianswer1[2].addEventListener("click", function(){
+                q1displayoff();
+                nextQuestion1();
             }))) {
-        }   else if ((document.querySelectorAll("li.answer1")[0].addEventListener("click", function(){
-            wrongNextQuestion();
+        }   else if ((lianswer1[0].addEventListener("click", function(){
+                wrongNextQuestion1();
+                q1displayoff();
         }))) {
-        }   else if ((document.querySelectorAll("li.answer1")[1].addEventListener("click", function(){
-            wrongNextQuestion();
+        }   else if ((lianswer1[1].addEventListener("click", function(){
+                wrongNextQuestion1();
+                q1displayoff();
         }))) {
-        }   else if ((document.querySelectorAll("li.answer1")[3].addEventListener("click", function(){
-            wrongNextQuestion();
+        }   else if ((lianswer1[3].addEventListener("click", function(){
+                wrongNextQuestion1();
+                q1displayoff();
         }))) {
         }
     };
 };
 
-function wrongNextQuestion(){
-    setInterval(function(){
-        wrong.style.display = "block";
-    }, 0);
-    setInterval(function(){
-        q1.style.display = "none";
-    }, 1000);
-    setInterval(function(){
-        q2.style.display = "block";
-    }, 1000);
-    setTimeout(function(){
-        wrong.style.display = "none";
-    }, 1000);
+function nextQuestion1(){
+    q2displayon();
+    answer2();
+};
+
+function wrongNextQuestion1(){
+    q2displayon();
+    answer2();
+};
+
+function answer2(){
+    for (var i = 0; i < lianswer2.length; i++) {
+            if ((lianswer2[2].addEventListener("click", function(){
+                nextQuestion2();
+                q2displayoff();
+            }))) {
+        }   else if ((lianswer2[0].addEventListener("click", function(){
+                wrongNextQuestion2();
+                q2displayoff();
+        }))) {
+        }   else if ((lianswer2[1].addEventListener("click", function(){
+                wrongNextQuestion2();
+                q2displayoff();
+        }))) {
+        }   else if ((lianswer2[3].addEventListener("click", function(){
+                wrongNextQuestion2();    
+                q2displayoff();
+        }))) {
+        }
+    };
+};
+
+function nextQuestion2(){
+    q3displayon();
+    answer3();
+};
+
+function wrongNextQuestion2(){
+    q3displayon();
+    answer3();
+};
+
+function answer3(){
+    for (var i = 0; i < lianswer3.length; i++) {
+            if ((lianswer3[2].addEventListener("click", function(){
+                nextQuestion3();
+                q3displayoff();
+            }))) {
+        }   else if ((lianswer3[0].addEventListener("click", function(){
+                wrongNextQuestion3();
+                q3displayoff();
+        }))) {
+        }   else if ((lianswer3[1].addEventListener("click", function(){
+                wrongNextQuestion3();
+                q3displayoff();
+        }))) {
+        }   else if ((lianswer3[3].addEventListener("click", function(){
+                wrongNextQuestion3();
+                q3displayoff();
+        }))) {
+        }
+    };
+};
+
+function nextQuestion3(){
+    q4displayon();
+    answer4();
+};
+
+function wrongNextQuestion3(){
+    q4displayon();
+    answer4();
+};
+
+function answer4(){
+    for (var i = 0; i < lianswer4.length; i++) {
+            if ((lianswer4[2].addEventListener("click", function(){
+                nextQuestion4();
+                q4displayoff();
+            }))) {
+        }   else if ((lianswer4[0].addEventListener("click", function(){
+                wrongNextQuestion4();
+                q4displayoff();
+        }))) {
+        }   else if ((lianswer4[1].addEventListener("click", function(){
+                wrongNextQuestion4();
+                q4displayoff();
+        }))) {
+        }   else if ((lianswer4[3].addEventListener("click", function(){
+                wrongNextQuestion4();
+                q4displayoff();
+        }))) {
+        }
+    };
+};
+
+function nextQuestion4(){
+    q5displayon();
+    answer5();
+};
+
+function wrongNextQuestion4(){
+    q5displayon();
+    answer5();
+};
+
+function answer5(){
+    for (var i = 0; i < lianswer5.length; i++) {
+            if ((lianswer2[2].addEventListener("click", function(){
+                nextQuestion5();
+                q5displayoff();
+            }))) {
+        }   else if ((lianswer5[0].addEventListener("click", function(){
+                wrongNextQuestion5();
+                q5displayoff();
+        }))) {
+        }   else if ((lianswer5[1].addEventListener("click", function(){
+                wrongNextQuestion5();
+                q5displayoff();
+        }))) {
+        }   else if ((lianswer5[3].addEventListener("click", function(){
+                wrongNextQuestion5();
+                q5displayoff();
+        }))) {
+        }
+    };
 };
 
 function addPoints(){
-    highScore =+ 10;
-    points.textContent = highScore;
+    highScore ++;
+    // points.textContent = highScore;
 };
 
 function minusPoints(){
-    highScore =- 10;
-    points.textContent = highScore;
+    highScore --;
+    // points.textContent = highScore;
 }
 
 console.log(highScore);

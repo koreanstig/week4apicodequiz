@@ -35,6 +35,14 @@ text-align: center;
     display: none;
 }
 
+.surprise {
+    display:block !important;
+}
+
+.byebye {
+    display: none !important;
+}
+
 .highscoreslist {
     padding-left: 1.1rem;
 }
